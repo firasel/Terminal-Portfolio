@@ -88,7 +88,7 @@ const Terminal: NextPage = () => {
 
   return (
     <div
-      className="w-[50rem] h-2/4 absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-y-auto"
+      className="w-[50rem] h-2/4 absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-y-auto scrollbar"
       ref={terminalParent}
     >
       <div>
