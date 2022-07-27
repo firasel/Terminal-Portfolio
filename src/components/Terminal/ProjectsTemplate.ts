@@ -1,4 +1,4 @@
-const projects = () => {
+const projectsTemplate = () => {
   const parentDiv = document.createElement("div");
   parentDiv.className = "text-orange-light text-lg";
   parentDiv.innerHTML = `
@@ -60,4 +60,4 @@ const projects = () => {
   return parentDiv;
 };
 
-export default projects;
+export default projectsTemplate;

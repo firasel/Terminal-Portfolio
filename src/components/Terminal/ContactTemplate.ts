@@ -1,4 +1,4 @@
-const contact = () => {
+const contactTemplate = () => {
   const parentDiv = document.createElement("div");
   parentDiv.className = "text-orange-light text-lg";
   parentDiv.innerHTML = `
@@ -15,4 +15,4 @@ const contact = () => {
   `;
   return parentDiv;
 };
-export default contact;
+export default contactTemplate;

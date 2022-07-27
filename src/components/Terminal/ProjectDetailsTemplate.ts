@@ -53,7 +53,7 @@ const allDetails = [
   },
 ];
 
-const projectDetails = (index: number) => {
+const projectDetailsTemplate = (index: number) => {
   index--;
   const parentDiv = document.createElement("div");
   parentDiv.className = "text-orange-light text-lg";
@@ -86,4 +86,4 @@ const projectDetails = (index: number) => {
     `;
   return parentDiv;
 };
-export default projectDetails;
+export default projectDetailsTemplate;

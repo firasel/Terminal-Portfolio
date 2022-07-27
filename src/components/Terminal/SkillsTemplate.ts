@@ -1,4 +1,4 @@
-const skills = () => {
+const skillsTemplate = () => {
   const parentDiv = document.createElement("div");
   parentDiv.className = "text-orange-light text-lg";
   parentDiv.innerHTML = `
@@ -38,4 +38,4 @@ const skills = () => {
   <br />`;
   return parentDiv;
 };
-export default skills;
+export default skillsTemplate;

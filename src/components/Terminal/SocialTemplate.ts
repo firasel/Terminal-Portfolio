@@ -1,4 +1,4 @@
-const social = () => {
+const socialTemplate = () => {
   const parentDiv = document.createElement("div");
   parentDiv.className = "text-orange-light text-lg";
   parentDiv.innerHTML = `
@@ -38,4 +38,4 @@ const social = () => {
     `;
   return parentDiv;
 };
-export default social;
+export default socialTemplate;
