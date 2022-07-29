@@ -88,14 +88,18 @@ const Terminal: NextPage = () => {
 
   return (
     <div
-      className="w-[50rem] h-2/4 absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-y-auto scrollbar"
+      className="w-full md:w-[45rem] lg:w-[50rem] h-screen md:h-[30rem] absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-x-hidden overflow-y-auto scrollbar"
       ref={terminalParent}
     >
-      <div>
-        <div className="flex items-end">
-          <span className="text-orange-default mr-1 text-lg">Welcome to</span>
-          <pre className="text-green">{title}</pre>
-          <span className="text-orange-default -ml-4 text-lg">.com</span>
+      <div className="">
+        <div className="flex items-end w-full">
+          <span className="text-orange-default mr-1 text-lg whitespace-nowrap leading-5 md:leading-6">
+            Welcome to
+          </span>
+          <pre className="text-green text-xs md:text-base">{title}</pre>
+          <span className="text-orange-default -ml-2 md:-ml-4 text-lg whitespace-nowrap leading-5 md:leading-6">
+            .com
+          </span>
         </div>
         <p className="text-primary-text text-lg">
           Type &quot;<span className="text-cyan">help</span>&quot; for command
@@ -120,7 +124,7 @@ const Terminal: NextPage = () => {
           />
         </div>
         <div
-          className="w-full min-h-[2rem]"
+          className="w-full min-h-[2rem] cursor-text"
           onClick={() => {
             if (commandInput.current) {
               commandInput?.current?.focus();
