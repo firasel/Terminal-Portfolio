@@ -6,7 +6,7 @@ const HomePage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Firasel.com</title>
+        <title>Fi Rasel - MERN Stack Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
