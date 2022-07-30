@@ -1,3 +1,4 @@
+import { Howl } from "howler";
 import { NextPage } from "next";
 import { useRef, useState } from "react";
 import aboutTemplate from "./AboutTemplate";
@@ -93,6 +94,18 @@ const Terminal: NextPage = () => {
     }
   };
 
+  const sndSrc =
+    "http://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a";
+
+  const keyPressSound = () => {
+    const sound = new Howl({
+      src: "/keyPress.mp3",
+      html5: true,
+      volume: 0.5,
+    });
+    sound.play();
+  };
+
   return (
     <div
       className="w-full md:w-[45rem] lg:w-[50rem] h-screen md:h-[30rem] absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-x-hidden overflow-y-auto scrollbar"
@@ -140,7 +153,10 @@ const Terminal: NextPage = () => {
                 await setCmdValue(historyCmd[cmdIndex] || "");
               }
             }}
-            onChange={(e) => setCmdValue(e?.target?.value)}
+            onChange={(e) => {
+              keyPressSound();
+              setCmdValue(e?.target?.value);
+            }}
           />
         </div>
         <div
