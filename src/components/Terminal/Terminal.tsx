@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import aboutTemplate from "./AboutTemplate";
 import commandTemplate from "./CommandTemplate";
 import contactTemplate from "./ContactTemplate";
@@ -19,6 +19,10 @@ const Terminal: NextPage = () => {
   const terminal = useRef<HTMLDivElement>(null);
   const terminalParent = useRef<HTMLDivElement>(null);
   const commandInput = useRef<HTMLInputElement>(null);
+  // using state for handle command history
+  const [historyCmd, setHistoryCmd] = useState<string[]>([]);
+  const [cmdIndex, setCmdIndex] = useState<number>(0);
+  const [cmdValue, setCmdValue] = useState<string>("");
 
   // Template insert in terminal element
   const templateInsert = (template: Function, cmd: string) => {
@@ -32,6 +36,9 @@ const Terminal: NextPage = () => {
 
   // Command input handle
   const handleCommand = (cmd: string) => {
+    // Store command history
+    setHistoryCmd((prevData) => [...prevData, cmd]);
+    setCmdIndex(historyCmd.length);
     // Command match and template insert in terminal
     switch (cmd.toLowerCase()) {
       case "help":
@@ -114,13 +121,26 @@ const Terminal: NextPage = () => {
           <input
             className="w-full text-lg text-cyan bg-transparent border-none outline-none caret-primary-text px-1"
             type="text"
+            value={cmdValue}
             ref={commandInput}
-            onKeyDown={(e) => {
+            onKeyDown={async (e) => {
+              // Hanlde user input key type
               if (e.key == "Enter" && e.target.value.trim() !== "") {
                 handleCommand(e.target.value);
-                e.target.value = "";
+                setCmdValue("");
+              } else if (e.key == "ArrowUp") {
+                await setCmdIndex((prev) =>
+                  prev - 1 >= 0 ? prev - 1 : historyCmd.length
+                );
+                await setCmdValue(historyCmd[cmdIndex] || "");
+              } else if (e.key == "ArrowDown") {
+                await setCmdIndex((prev) =>
+                  prev + 1 <= historyCmd.length ? prev + 1 : 0
+                );
+                await setCmdValue(historyCmd[cmdIndex] || "");
               }
             }}
+            onChange={(e) => setCmdValue(e?.target?.value)}
           />
         </div>
         <div
