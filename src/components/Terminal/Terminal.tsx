@@ -60,9 +60,6 @@ const Terminal: NextPage = () => {
       case "contact":
         templateInsert(contactTemplate, cmd);
         break;
-      case "pr":
-      case "project":
-        break;
       case "clear":
         if (terminal?.current) {
           terminal!.current!.innerHTML = "";
