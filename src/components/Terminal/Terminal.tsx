@@ -35,15 +35,25 @@ const Terminal: NextPage = () => {
     sound.play();
   };
 
+  // Open new tab with social links
+  const openNewTab = (url: string) => {
+    if (window) {
+      window.open(url, "_blank");
+    }
+  };
+
   // Template insert in terminal element
-  const templateInsert = (template: Function, cmd: string) => {
+  const templateInsert = (template: Function | null, cmd: string) => {
     handleSound("/textPrint.mp3");
 
-    if (terminal.current) {
+    if (terminal.current && template) {
       // Entered command history insert
       terminal?.current?.appendChild(commandTemplate(cmd));
       // Template isert
       terminal?.current?.appendChild(template());
+    } else if (terminal.current && !template) {
+      // Entered command history insert
+      terminal?.current?.appendChild(commandTemplate(cmd));
     }
   };
 
@@ -71,6 +81,18 @@ const Terminal: NextPage = () => {
         break;
       case "contact":
         templateInsert(contactTemplate, cmd);
+        break;
+      case "github":
+        templateInsert(null, cmd);
+        openNewTab("https://github.com/firasel");
+        break;
+      case "linkedin":
+        templateInsert(null, cmd);
+        openNewTab("https://www.linkedin.com/in/firasel");
+        break;
+      case "facebook":
+        templateInsert(null, cmd);
+        openNewTab("https://www.facebook.com/fi.mdrasel");
         break;
       case "clear":
         handleSound("/clear.mp3");
