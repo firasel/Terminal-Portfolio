@@ -127,6 +127,7 @@ const Terminal: NextPage = () => {
         </div>
         <p className="text-primary-text text-lg">
           Type &quot;<span className="text-cyan">help</span>&quot; for command
+          list
         </p>
       </div>
       <div className="w-full" ref={terminal}></div>
