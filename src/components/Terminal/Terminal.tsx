@@ -25,8 +25,20 @@ const Terminal: NextPage = () => {
   const [cmdIndex, setCmdIndex] = useState<number>(0);
   const [cmdValue, setCmdValue] = useState<string>("");
 
+  // Sound play function
+  const handleSound = (src: string) => {
+    const sound = new Howl({
+      src,
+      html5: true,
+      volume: 0.5,
+    });
+    sound.play();
+  };
+
   // Template insert in terminal element
   const templateInsert = (template: Function, cmd: string) => {
+    handleSound("/textPrint.mp3");
+
     if (terminal.current) {
       // Entered command history insert
       terminal?.current?.appendChild(commandTemplate(cmd));
@@ -61,6 +73,7 @@ const Terminal: NextPage = () => {
         templateInsert(contactTemplate, cmd);
         break;
       case "clear":
+        handleSound("/clear.mp3");
         if (terminal?.current) {
           terminal!.current!.innerHTML = "";
         }
@@ -78,7 +91,13 @@ const Terminal: NextPage = () => {
             cmd
           );
         } else {
-          templateInsert(errorTemplate.bind(null, cmd), cmd);
+          handleSound("/error.mp3");
+          if (terminal.current) {
+            // Entered command history insert
+            terminal?.current?.appendChild(commandTemplate(cmd));
+            // Template isert
+            terminal?.current?.appendChild(errorTemplate(cmd));
+          }
         }
         break;
     }
@@ -89,18 +108,6 @@ const Terminal: NextPage = () => {
         top: terminalParent.current.scrollHeight,
       });
     }
-  };
-
-  const sndSrc =
-    "http://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a";
-
-  const keyPressSound = () => {
-    const sound = new Howl({
-      src: "/keyPress.mp3",
-      html5: true,
-      volume: 0.5,
-    });
-    sound.play();
   };
 
   return (
@@ -151,7 +158,9 @@ const Terminal: NextPage = () => {
               }
             }}
             onChange={(e) => {
-              keyPressSound();
+              // Play type sound
+              handleSound("/keyPress.mp3");
+              // Set input value in state
               setCmdValue(e?.target?.value);
             }}
           />
