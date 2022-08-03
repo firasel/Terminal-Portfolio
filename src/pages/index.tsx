@@ -8,6 +8,15 @@ const HomePage: NextPage = () => {
       <Head>
         <title>Fi Rasel - MERN Stack Developer</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="author" content="FiRasel" />
+        <meta
+          name="keywords"
+          content="FiRasel, Rasel, MdRasel, mern stack developer, terminal portfolio, terminal style portfolio, nextJS portfolio"
+        />
+        <meta
+          name="description"
+          content="Hi, I'm Fi Rasel, A Programmer and MERN stack developer."
+        />
       </Head>
       <main>
         <Home />
