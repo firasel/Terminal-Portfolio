@@ -144,8 +144,8 @@ const Terminal: NextPage = () => {
       className="w-full md:w-[45rem] lg:w-[50rem] h-screen md:h-[30rem] absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-x-hidden overflow-y-auto scrollbar"
       ref={terminalParent}
     >
-      <div className="">
-        <div className="flex items-end w-full">
+      <div>
+        <h1 className="flex items-end">
           <span className="text-orange-default mr-1 text-lg whitespace-nowrap leading-5 md:leading-6">
             Welcome to
           </span>
@@ -153,7 +153,7 @@ const Terminal: NextPage = () => {
           <span className="text-orange-default -ml-2 md:-ml-4 text-lg whitespace-nowrap leading-5 md:leading-6">
             .com
           </span>
-        </div>
+        </h1>
         <p className="text-primary-text text-lg">
           Type &quot;<span className="text-cyan">help</span>&quot; for command
           list
