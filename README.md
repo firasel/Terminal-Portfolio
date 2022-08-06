@@ -1,4 +1,4 @@
-# FiRasel Terminal Portfolio
+<h1 align="center">FiRasel Terminal Portfolio</h1>
 
 A Terminal Styled Portfolio Website with sound effects.
 

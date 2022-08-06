@@ -21,6 +21,6 @@
   }
 }
 
-.soundBtn:hover .rangeBlock {
+.soundControl:hover .rangeBlock {
   display: block !important;
 }

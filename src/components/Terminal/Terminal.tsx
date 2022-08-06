@@ -170,7 +170,6 @@ const Terminal: NextPage = () => {
             type="text"
             value={cmdValue}
             ref={commandInput}
-            // onKeyDownCapture={(e) => console.log(e.key)}
             onKeyDown={async (e) => {
               if (
                 ((e.key >= "a" && e.key <= "z") ||

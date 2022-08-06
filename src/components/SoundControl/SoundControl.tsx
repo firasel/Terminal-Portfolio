@@ -19,7 +19,7 @@ const SoundControl: NextPage = () => {
 
   return (
     <div className="absolute bottom-5 right-5">
-      <div className="flex items-center gap-1 justify-end max-w-44 soundBtn">
+      <div className="flex items-center gap-1 justify-end max-w-44 soundControl">
         <button
           className="w-9 h-9 md:w-10 md:h-10 p-2 md:p-[10px] bg-[#ffffff14] rounded-xl hover:bg-[#ffffff1a] hover:shadow-md shadow-white"
           onClick={() => {

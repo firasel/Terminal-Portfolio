@@ -6,7 +6,7 @@ const textAnimate = (key: string) => {
   // Letter box create
   const div = document?.createElement("div");
   div.className =
-    "w-10 h-10 rounded-md text-3xl text-white flex items-center justify-center translate-y-[100vh] ease-in-out shadow-lg shadow-gray-50/10 bg-transparent dropTextBox";
+    "w-10 h-10 rounded-md text-3xl text-white flex items-center justify-center translate-y-[100vh] ease-in-out shadow-lg shadow-gray-50/10 bg-transparent";
   div.innerHTML = `<span>${key}</span>`;
   // Drop animation
   div.animate(
