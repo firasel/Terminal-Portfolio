@@ -1,3 +1,4 @@
+<br/>
 <h1 align="center">FiRasel Terminal Portfolio</h1>
 
 A Terminal Styled Portfolio Website with sound effects.
@@ -46,6 +47,10 @@ Inspired by these websites. Every code is written by me.
 ## Contribution
 
 Please feel free to add issues/pull requests to the project.
+
+## License
+
+[MIT License](LICENSE)
 
 ## Authors
 
