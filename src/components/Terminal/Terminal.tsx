@@ -161,48 +161,53 @@ const Terminal: NextPage = () => {
       </div>
       <div className="w-full" ref={terminal}></div>
       <div>
-        <div className="w-full flex">
-          <span className="text-green text-lg">
-            <span className="text-orange-default">visitor</span>@firasel.com:~$
-          </span>
-          <input
-            className="w-full text-lg text-cyan bg-transparent border-none outline-none caret-primary-text px-1"
-            type="text"
-            value={cmdValue}
-            ref={commandInput}
-            onKeyDown={async (e) => {
-              if (
-                ((e.key >= "a" && e.key <= "z") ||
-                  (e.key >= "A" && e.key <= "Z") ||
-                  (e.key >= "0" && e.key <= "9")) &&
-                e.key.length === 1
-              ) {
-                textAnimate(e.key);
-              }
-              // Hanlde user input key type
-              if (e.key == "Enter" && e.target.value.trim() !== "") {
-                handleCommand(e.target.value);
-                setCmdValue("");
-              } else if (e.key == "ArrowUp") {
-                await setCmdIndex((prev) =>
-                  prev - 1 >= 0 ? prev - 1 : historyCmd.length
-                );
-                await setCmdValue(historyCmd[cmdIndex] || "");
-              } else if (e.key == "ArrowDown") {
-                await setCmdIndex((prev) =>
-                  prev + 1 <= historyCmd.length ? prev + 1 : 0
-                );
-                await setCmdValue(historyCmd[cmdIndex] || "");
-              }
-            }}
-            onChange={(e) => {
-              // Play type sound
-              handleSound("/keyPress.mp3");
-              // Set input value in state
-              setCmdValue(e?.target?.value);
-            }}
-            autoComplete="off"
-          />
+        <div className="w-full md:flex">
+          <label htmlFor="terminalInput" className="text-green text-lg">
+            <span className="text-orange-default">visitor</span>
+            @terminal.firasel.com:~$
+          </label>
+          <div className="w-full flex items-center">
+            <span className="text-white text-lg md:hidden">&gt;</span>
+            <input
+              id="terminalInput"
+              className="w-full text-lg text-cyan bg-transparent border-none outline-none caret-primary-text px-1"
+              type="text"
+              value={cmdValue}
+              ref={commandInput}
+              onKeyDown={async (e) => {
+                if (
+                  ((e.key >= "a" && e.key <= "z") ||
+                    (e.key >= "A" && e.key <= "Z") ||
+                    (e.key >= "0" && e.key <= "9")) &&
+                  e.key.length === 1
+                ) {
+                  textAnimate(e.key);
+                }
+                // Hanlde user input key type
+                if (e.key == "Enter" && e.target.value.trim() !== "") {
+                  handleCommand(e.target.value);
+                  setCmdValue("");
+                } else if (e.key == "ArrowUp") {
+                  await setCmdIndex((prev) =>
+                    prev - 1 >= 0 ? prev - 1 : historyCmd.length
+                  );
+                  await setCmdValue(historyCmd[cmdIndex] || "");
+                } else if (e.key == "ArrowDown") {
+                  await setCmdIndex((prev) =>
+                    prev + 1 <= historyCmd.length ? prev + 1 : 0
+                  );
+                  await setCmdValue(historyCmd[cmdIndex] || "");
+                }
+              }}
+              onChange={(e) => {
+                // Play type sound
+                handleSound("/keyPress.mp3");
+                // Set input value in state
+                setCmdValue(e?.target?.value);
+              }}
+              autoComplete="off"
+            />
+          </div>
         </div>
         <div
           className="w-full min-h-[2rem] cursor-text"

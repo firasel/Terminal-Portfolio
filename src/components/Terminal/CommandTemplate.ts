@@ -3,7 +3,9 @@ const commandTemplate = (cmd: string) => {
   parentDiv.className = "w-full flex";
   parentDiv.innerHTML = `
   <span class="text-green text-lg">
-    <span class="text-orange-default">visitor</span>@firasel.com:~$
+    <span class="text-orange-default">visitor</span>@terminal.firasel.com:~$
+    <br class="md:hidden" />
+    <span class="text-white text-lg md:hidden">&gt;</span>
     <span class="text-cyan">${cmd}</span>
   </span><br/>
     `;
