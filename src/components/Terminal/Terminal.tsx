@@ -13,7 +13,7 @@ import skillsTemplate from "./SkillsTemplate";
 import socialTemplate from "./SocialTemplate";
 
 const Terminal: NextPage = () => {
-  const title: String = String.raw`                                              _                            
+  const title: String = String.raw`                                                                       
              __ _  _   _   ___  _ __    ___ | |__    __ _                 
             / _` || | | | / _ \| '_ \  / __|| '_ \  / _` |                
            | (_| || |_| ||  __/| | | || (__ | | | || (_| |                
@@ -86,15 +86,15 @@ const Terminal: NextPage = () => {
         break;
       case "github":
         templateInsert(null, cmd);
-        openNewTab("https://github.com/firasel");
+        openNewTab("https://github.com/ayenchayyy");
         break;
       case "linkedin":
         templateInsert(null, cmd);
-        openNewTab("https://www.linkedin.com/in/firasel");
+        openNewTab("https://www.linkedin.com/in/ayenchaaa");
         break;
       case "facebook":
         templateInsert(null, cmd);
-        openNewTab("https://www.facebook.com/fi.mdrasel");
+        openNewTab("https://www.facebook.com/ayenchaaa");
         break;
       case "clear":
         handleSound("/clear.mp3");
@@ -166,7 +166,7 @@ const Terminal: NextPage = () => {
         <div className="w-full md:flex">
           <label htmlFor="terminalInput" className="text-green text-lg">
             <span className="text-orange-default">visitor</span>
-            @terminal.firasel.com:~$
+            @terminal.ayencha.com:~$
           </label>
           <div className="w-full flex items-center">
             <span className="text-white text-lg md:hidden">&gt;</span>
