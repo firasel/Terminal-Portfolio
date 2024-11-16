@@ -8,7 +8,7 @@ const socialTemplate = () => {
   <br />
   &gt;
   <a
-    href="https://github.com/firasel"
+    href="https://github.com/ayenchayyy"
     target="_blank"
     rel="noreferrer"
     class="text-emerald-400 pl-1"
@@ -18,7 +18,7 @@ const socialTemplate = () => {
   <br />
   &gt;
   <a
-    href="https://www.linkedin.com/in/firasel/"
+    href="https://www.linkedin.com/in/ayenchaa/"
     target="_blank"
     rel="noreferrer"
     class="text-emerald-400 pl-1"
@@ -28,7 +28,7 @@ const socialTemplate = () => {
   <br />
   &gt;
   <a
-    href="https://www.facebook.com/fi.mdrasel"
+    href="https://www.facebook.com/ayenchaaa"
     target="_blank"
     rel="noreferrer"
     class="text-emerald-400 pl-1"
