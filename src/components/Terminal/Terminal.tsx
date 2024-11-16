@@ -13,10 +13,12 @@ import skillsTemplate from "./SkillsTemplate";
 import socialTemplate from "./SocialTemplate";
 
 const Terminal: NextPage = () => {
-  const title: String = String.raw`   _____ ___               __
-  / __(_) _ \___ ____ ___ / /
- / _// / , _/ _ '(_-</ -_) / 
-/_/ /_/_/|_|\_,_/___/\__/_/
+  const title: String = String.raw`                                              _                            
+             __ _  _   _   ___  _ __    ___ | |__    __ _                 
+            / _` || | | | / _ \| '_ \  / __|| '_ \  / _` |                
+           | (_| || |_| ||  __/| | | || (__ | | | || (_| |                
+            \__,_| \__, | \___||_| |_| \___||_| |_| \__,_|                
+                   |___/                                         
 `;
   const terminal = useRef<HTMLDivElement>(null);
   const terminalParent = useRef<HTMLDivElement>(null);
