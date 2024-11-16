@@ -7,9 +7,6 @@ const helpListTemplate = () => {
 <pre class="whitespace-pre-line md:whitespace-pre-wrap">
 <span class="text-cyan">about</span>    - about me
 <span class="text-cyan">skills</span>   - my skills
-<span class="text-cyan">projects</span> - my project list
-<span class="text-cyan">project projectNumber</span>,
-<span class="text-cyan">pr projectNumber</span> - project details
 <span class="text-cyan">social</span>   - social account link
 <span class="text-cyan">contact</span>  - contact information
 <span class="text-cyan">help</span>     - all available command list
