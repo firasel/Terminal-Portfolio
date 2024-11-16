@@ -3,13 +3,13 @@ const contactTemplate = () => {
   parentDiv.className = "text-orange-light text-lg";
   parentDiv.innerHTML = `
   Email: 
-  <a href="mailto:md.firasel@gmail.com" class="text-emerald-400">
-    md.firasel@gmail.com
+  <a href="mailto:info@ayencha.com" class="text-emerald-400">
+    info@ayencha.com
   </a>
   <br />
   Mobile: 
-  <a href="tel:+8801619601390" class="text-emerald-400">
-    +8801619601390
+  <a href="tel:+31619627867" class="text-emerald-400">
+    +3119627867
   </a>
   <br />
   `;
