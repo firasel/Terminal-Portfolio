@@ -1,11 +1,12 @@
-import { Howler } from "howler";
-import { NextPage } from "next";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import soundOff from "../../assets/icons/soundOff.svg";
-import soundOn from "../../assets/icons/soundOn.svg";
+"use client";
 
-const SoundControl: NextPage = () => {
+import { Howler } from "howler";
+import { useEffect, useState } from "react";
+// import soundOff from "../../assets/icons/soundOff.svg";
+// import soundOn from "../../assets/icons/soundOn.svg";
+// import Image from "next/image";
+
+export default function SoundControl() {
   const [rangeValue, setRangeValue] = useState(50);
 
   const handleVolume = (e: any) => {
@@ -21,17 +22,14 @@ const SoundControl: NextPage = () => {
     <div className="absolute bottom-5 right-5">
       <div className="flex items-center gap-1 justify-end max-w-44 soundControl">
         <button
-          className="w-9 h-9 md:w-10 md:h-10 p-2 md:p-[10px] bg-[#ffffff14] rounded-xl hover:bg-[#ffffff1a] hover:shadow-md shadow-white"
+          className="w-9 h-9 md:w-10 md:h-10 p-2 md:p-2.5 bg-[#ffffff14] rounded-xl hover:bg-[#ffffff1a] hover:shadow-md shadow-white"
           onClick={() => {
             if (rangeValue > 0) {
               setRangeValue(0);
             } else setRangeValue(50);
           }}
         >
-          <Image
-            src={rangeValue == 0 ? soundOff : soundOn}
-            alt="Sound on icon"
-          />
+          {rangeValue == 0 ? "Unmute" : "Mute"}
         </button>
         <input
           className="w-full hidden cursor-pointer rangeBlock"
@@ -45,6 +43,4 @@ const SoundControl: NextPage = () => {
       </div>
     </div>
   );
-};
-
-export default SoundControl;
+}
