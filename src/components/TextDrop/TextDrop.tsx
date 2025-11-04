@@ -1,12 +1,18 @@
-import { NextPage } from "next";
+"use client";
 
 const textAnimate = (key: string) => {
+  // Check if we're in the browser and element exists
+  if (typeof document === "undefined") return;
+
+  const container = document.getElementById("textAnimate");
+  if (!container) return;
+
   // Random number generate
   const dynamicNum = Math.floor(Math.random() * 99 + 1);
   // Letter box create
-  const div = document?.createElement("div");
+  const div = document.createElement("div");
   div.className =
-    "w-10 h-10 rounded-md text-3xl text-white flex items-center justify-center translate-y-[100vh] ease-in-out shadow-lg shadow-gray-50/10 bg-transparent";
+    "w-10 h-10 rounded-md text-3xl text-white flex items-center justify-center translate-y-[0vh] ease-in-out shadow-lg shadow-gray-50/10 bg-transparent";
   div.innerHTML = `<span>${key}</span>`;
   // Drop animation
   div.animate(
@@ -25,21 +31,23 @@ const textAnimate = (key: string) => {
         }vw, 100vh) rotate(${dynamicNum % 2 == 0 ? "-70deg" : "70deg"})`,
       },
     ],
-    { duration: 2000 }
+    { duration: 2000, fill: "forwards" }
   );
+
   // Insert in parent div
-  document?.getElementById("textAnimate")?.prepend(div);
-  setTimeout(
-    () => document?.getElementById("textAnimate")?.removeChild(div),
-    2000
-  );
+  container.prepend(div);
+  setTimeout(() => {
+    if (container && div.parentNode === container) {
+      container.removeChild(div);
+    }
+  }, 2000);
 };
 
-const TextDrop: NextPage = () => {
+const TextDrop = () => {
   return (
     <div
       id="textAnimate"
-      className="w-full h-screen absolute top-0 overflow-hidden -z-0"
+      className="w-full h-screen absolute top-0 overflow-hidden z-1"
     ></div>
   );
 };
