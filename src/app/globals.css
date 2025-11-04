@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-black: #18191a;
+  --color-secondary: #242526;
+  --color-primary-text: #e4e6eb;
+  --color-secondary-text: #b0b3bb;
+  --color-green: #00c314;
+  --color-orange: #feb700;
+  --color-orange-light: #fdba74;
+  --color-cyan: #00bdd7;
+  --color-tahiti: #3ab7bf;
+}
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
