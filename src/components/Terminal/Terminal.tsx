@@ -1,5 +1,6 @@
+"use client";
+
 import { Howl } from "howler";
-import { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 import { textAnimate } from "../TextDrop/TextDrop";
 import aboutTemplate from "./AboutTemplate";
@@ -12,8 +13,8 @@ import projectsTemplate from "./ProjectsTemplate";
 import skillsTemplate from "./SkillsTemplate";
 import socialTemplate from "./SocialTemplate";
 
-const Terminal: NextPage = () => {
-  const title: String = String.raw`   _____ ___               __
+const Terminal = () => {
+  const title = String.raw`   _____ ___               __
   / __(_) _ \___ ____ ___ / /
  / _// / , _/ _ '(_-</ -_) / 
 /_/ /_/_/|_|\_,_/___/\__/_/
@@ -43,7 +44,10 @@ const Terminal: NextPage = () => {
   };
 
   // Template insert in terminal element
-  const templateInsert = (template: Function | null, cmd: string) => {
+  const templateInsert = (
+    template: (() => HTMLElement) | null,
+    cmd: string
+  ) => {
     handleSound("/textPrint.mp3");
 
     if (terminal.current && template) {
@@ -101,7 +105,7 @@ const Terminal: NextPage = () => {
         }
         break;
       default:
-        let command = cmd.toLowerCase().split(" ");
+        const command = cmd.toLowerCase().split(" ");
         if (
           (command[0] == "pr" || command[0] == "project") &&
           Number(command[1]) > 0 &&
@@ -141,16 +145,16 @@ const Terminal: NextPage = () => {
 
   return (
     <div
-      className="w-full md:w-[45rem] lg:w-[50rem] h-screen md:h-[30rem] absolute bg-secondary rounded-lg px-2 pb-2 pt-[2px] shadow-xl shadow-[#242526]/25 overflow-x-hidden overflow-y-auto scrollbar"
+      className="w-full md:w-180 lg:w-200 h-screen md:h-120 absolute bg-secondary rounded-lg px-2 pb-2 pt-0.5 shadow-xl shadow-secondary/25 overflow-x-hidden overflow-y-auto scrollbar"
       ref={terminalParent}
     >
       <div>
         <h1 className="flex items-end">
-          <span className="text-orange-default mr-1 text-lg whitespace-nowrap leading-5 md:leading-6">
+          <span className="text-orange mr-1 text-lg whitespace-nowrap leading-5 md:leading-6">
             Welcome to
           </span>
           <pre className="text-green text-xs md:text-base">{title}</pre>
-          <span className="text-orange-default -ml-2 md:-ml-4 text-lg whitespace-nowrap leading-5 md:leading-6">
+          <span className="text-orange -ml-2 md:-ml-4 text-lg whitespace-nowrap leading-5 md:leading-6">
             .com
           </span>
         </h1>
@@ -163,7 +167,7 @@ const Terminal: NextPage = () => {
       <div>
         <div className="w-full md:flex">
           <label htmlFor="terminalInput" className="text-green text-lg">
-            <span className="text-orange-default">visitor</span>
+            <span className="text-orange">visitor</span>
             @terminal.firasel.com:~$
           </label>
           <div className="w-full flex items-center">
@@ -175,6 +179,7 @@ const Terminal: NextPage = () => {
               value={cmdValue}
               ref={commandInput}
               onKeyDown={async (e) => {
+                const target = e.target as HTMLInputElement;
                 if (
                   ((e.key >= "a" && e.key <= "z") ||
                     (e.key >= "A" && e.key <= "Z") ||
@@ -184,8 +189,8 @@ const Terminal: NextPage = () => {
                   textAnimate(e.key);
                 }
                 // Hanlde user input key type
-                if (e.key == "Enter" && e.target.value.trim() !== "") {
-                  handleCommand(e.target.value);
+                if (e.key == "Enter" && target.value.trim() !== "") {
+                  handleCommand(target.value);
                   setCmdValue("");
                 } else if (e.key == "ArrowUp") {
                   await setCmdIndex((prev) =>
@@ -210,7 +215,7 @@ const Terminal: NextPage = () => {
           </div>
         </div>
         <div
-          className="w-full min-h-[2rem] cursor-text"
+          className="w-full min-h-8 cursor-text"
           onClick={() => {
             if (commandInput.current) {
               commandInput?.current?.focus();
