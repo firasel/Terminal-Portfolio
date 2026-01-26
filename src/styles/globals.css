@@ -1,7 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* Custom Theme Configuration (migrated from tailwind.config.js) */
+@theme {
+  --color-black: #18191a;
+  --color-secondary: #242526;
+  --color-primary-text: #e4e6eb;
+  --color-secondary-text: #b0b3bb;
+  --color-green: #00c314;
+  --color-orange-default: #feb700;
+  --color-orange-light: #fdba74;
+  --color-cyan: #00bdd7;
+  --color-tahiti: #3ab7bf;
+}
+
+/* Custom Scrollbar Styles */
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 15px;

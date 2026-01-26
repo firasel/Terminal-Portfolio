@@ -5,9 +5,10 @@ A Terminal Styled Portfolio Website with sound effects.
 
 ## Technologies
 
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [Next.js 15](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [TypeScript 5](https://www.typescriptlang.org/)
+- [TailwindCSS 4](https://tailwindcss.com/)
 - [Howler.JS](https://howlerjs.com/)
 
 ## Run Locally
@@ -34,6 +35,28 @@ Start the server
 
 ```bash
 yarn dev
+```
+
+Build for production
+
+```bash
+yarn build
+```
+
+## Project Structure
+
+```
+src/
+├── app/                  # Next.js 15 App Router
+│   ├── layout.tsx       # Root layout with metadata
+│   └── page.tsx         # Home page
+├── components/
+│   ├── Home/            # Main container
+│   ├── SoundControl/    # Volume control
+│   ├── Terminal/        # Terminal emulator + templates
+│   └── TextDrop/        # Keypress animation
+└── styles/
+    └── globals.css      # TailwindCSS v4 config
 ```
 
 ## Inspiration and Credits

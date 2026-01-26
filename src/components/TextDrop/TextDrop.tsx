@@ -1,3 +1,5 @@
+"use client";
+
 import { NextPage } from "next";
 
 const textAnimate = (key: string) => {
@@ -25,13 +27,13 @@ const textAnimate = (key: string) => {
         }vw, 100vh) rotate(${dynamicNum % 2 == 0 ? "-70deg" : "70deg"})`,
       },
     ],
-    { duration: 2000 }
+    { duration: 2000 },
   );
   // Insert in parent div
   document?.getElementById("textAnimate")?.prepend(div);
   setTimeout(
     () => document?.getElementById("textAnimate")?.removeChild(div),
-    2000
+    2000,
   );
 };
 

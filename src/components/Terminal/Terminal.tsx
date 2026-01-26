@@ -1,3 +1,5 @@
+"use client";
+
 import { Howl } from "howler";
 import { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
@@ -13,7 +15,7 @@ import skillsTemplate from "./SkillsTemplate";
 import socialTemplate from "./SocialTemplate";
 
 const Terminal: NextPage = () => {
-  const title: String = String.raw`   _____ ___               __
+  const title: string = String.raw`   _____ ___               __
   / __(_) _ \___ ____ ___ / /
  / _// / , _/ _ '(_-</ -_) / 
 /_/ /_/_/|_|\_,_/___/\__/_/
@@ -43,7 +45,10 @@ const Terminal: NextPage = () => {
   };
 
   // Template insert in terminal element
-  const templateInsert = (template: Function | null, cmd: string) => {
+  const templateInsert = (
+    template: (() => HTMLDivElement) | null,
+    cmd: string,
+  ) => {
     handleSound("/textPrint.mp3");
 
     if (terminal.current && template) {
@@ -101,7 +106,7 @@ const Terminal: NextPage = () => {
         }
         break;
       default:
-        let command = cmd.toLowerCase().split(" ");
+        const command = cmd.toLowerCase().split(" ");
         if (
           (command[0] == "pr" || command[0] == "project") &&
           Number(command[1]) > 0 &&
@@ -110,7 +115,7 @@ const Terminal: NextPage = () => {
         ) {
           templateInsert(
             projectDetailsTemplate.bind(null, Number(command[1])),
-            cmd
+            cmd,
           );
         } else {
           handleSound("/error.mp3");
@@ -184,17 +189,17 @@ const Terminal: NextPage = () => {
                   textAnimate(e.key);
                 }
                 // Hanlde user input key type
-                if (e.key == "Enter" && e.target.value.trim() !== "") {
-                  handleCommand(e.target.value);
+                if (e.key == "Enter" && e.currentTarget.value.trim() !== "") {
+                  handleCommand(e.currentTarget.value);
                   setCmdValue("");
                 } else if (e.key == "ArrowUp") {
                   await setCmdIndex((prev) =>
-                    prev - 1 >= 0 ? prev - 1 : historyCmd.length
+                    prev - 1 >= 0 ? prev - 1 : historyCmd.length,
                   );
                   await setCmdValue(historyCmd[cmdIndex] || "");
                 } else if (e.key == "ArrowDown") {
                   await setCmdIndex((prev) =>
-                    prev + 1 <= historyCmd.length ? prev + 1 : 0
+                    prev + 1 <= historyCmd.length ? prev + 1 : 0,
                   );
                   await setCmdValue(historyCmd[cmdIndex] || "");
                 }

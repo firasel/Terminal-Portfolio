@@ -1,3 +1,5 @@
+"use client";
+
 import { Howler } from "howler";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -8,7 +10,7 @@ import soundOn from "../../assets/icons/soundOn.svg";
 const SoundControl: NextPage = () => {
   const [rangeValue, setRangeValue] = useState(50);
 
-  const handleVolume = (e: any) => {
+  const handleVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRangeValue(parseInt(e.target.value));
   };
 

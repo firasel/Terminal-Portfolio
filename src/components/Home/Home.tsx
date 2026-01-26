@@ -1,3 +1,5 @@
+"use client";
+
 import { NextPage } from "next";
 import SoundControl from "../SoundControl/SoundControl";
 import Terminal from "../Terminal/Terminal";
