@@ -9,6 +9,7 @@ import { SOCIAL_LINKS } from "./constants";
 import {
   AboutTemplate,
   ContactTemplate,
+  ExperienceTemplate,
   HelpListTemplate,
   ProjectDetailsTemplate,
   ProjectsTemplate,
@@ -47,6 +48,8 @@ export const COMMAND_REGISTRY: Record<string, CommandDefinition> = {
   about: { type: "template", template: AboutTemplate },
   skills: { type: "template", template: SkillsTemplate },
   projects: { type: "template", template: ProjectsTemplate },
+  experience: { type: "template", template: ExperienceTemplate },
+  xp: { type: "template", template: ExperienceTemplate },
   social: { type: "template", template: SocialTemplate },
   socials: { type: "template", template: SocialTemplate },
   contact: { type: "template", template: ContactTemplate },
@@ -54,7 +57,7 @@ export const COMMAND_REGISTRY: Record<string, CommandDefinition> = {
   // Link commands - open URLs
   github: { type: "link", url: SOCIAL_LINKS.github },
   linkedin: { type: "link", url: SOCIAL_LINKS.linkedin },
-  facebook: { type: "link", url: SOCIAL_LINKS.facebook },
+  leetcode: { type: "link", url: SOCIAL_LINKS.leetcode },
 
   // Special commands - handled separately
   clear: { type: "special" },

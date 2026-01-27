@@ -7,3 +7,4 @@ export { ProjectDetailsTemplate } from "./project-details";
 export { ProjectsTemplate } from "./projects";
 export { SkillsTemplate } from "./skills";
 export { SocialTemplate } from "./social";
+export { ExperienceTemplate } from "./experience";
