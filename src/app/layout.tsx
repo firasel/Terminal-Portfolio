@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "../styles/globals.css";
+import { PropsWithChildren } from "react";
 
 const siteTitleDescription = {
   title: "Fi Rasel - Software Developer | Next.js & Headless CMS",
@@ -33,11 +34,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body>
