@@ -22,7 +22,7 @@ export function Terminal() {
   }, [focusInput]);
 
   return (
-    <div className="w-full max-w-5xl h-[85vh] flex flex-col bg-glass-surface backdrop-blur-2xl border border-glass-border rounded-2xl relative overflow-hidden shadow-2xl shadow-black/50">
+    <div className="w-full max-w-5xl h-[80vh] md:h-[85vh] flex flex-col bg-glass-surface backdrop-blur-2xl border border-glass-border rounded-2xl relative overflow-hidden shadow-2xl shadow-black/50">
       {/* Header with macOS-style controls */}
       <header className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-white/5 select-none shrink-0">
         <div className="flex items-center gap-2">
