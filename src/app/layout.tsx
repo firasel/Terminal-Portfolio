@@ -1,24 +1,27 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "../styles/globals.css";
 
+const siteTitleDescription = {
+  title: "Fi Rasel - Software Developer | Next.js & Headless CMS",
+  description:
+    "Software Developer with 3+ years of experience building modern web applications. Specialized in Next.js, React, headless CMS solutions, and complex UI architecture.",
+};
+
 export const metadata: Metadata = {
-  title: "Fi Rasel - MERN Stack Developer",
-  description: "Hi, I'm Fi Rasel, A Programmer and MERN stack developer.",
+  ...siteTitleDescription,
   keywords:
-    "FiRasel, Rasel, MdRasel, mern stack developer, terminal portfolio, terminal style portfolio, nextJS portfolio",
+    "FiRasel, Fi Rasel, Md Rasel, software engineer, frontend developer, Next.js developer, React developer, headless CMS, PayloadCMS, Sanity CMS, TailwindCSS, TypeScript, terminal portfolio, interactive portfolio",
   authors: [{ name: "FiRasel" }],
   openGraph: {
-    title: "Fi Rasel - MERN Stack Developer",
-    description: "Hi, I'm Fi Rasel, A Programmer and MERN stack developer.",
+    ...siteTitleDescription,
     url: "https://terminal.firasel.com/",
     type: "website",
     images: ["https://i.ibb.co/2SDhrHX/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fi Rasel - MERN Stack Developer",
-    description: "Hi, I'm Fi Rasel, A Programmer and MERN stack developer.",
+    ...siteTitleDescription,
     images: ["https://i.ibb.co/2SDhrHX/og.png"],
   },
 };
@@ -31,17 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Script
-          strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
-        />
-        <Script strategy="lazyOnload" id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}');`}
-        </Script>
         {children}
+        {process.env.NEXT_PUBLIC_ANALYTICS_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_ANALYTICS_ID} />
+        )}
       </body>
     </html>
   );
