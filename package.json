@@ -1,8 +1,33 @@
 {
-  "name": "terminal_portfolio",
-  "version": "0.2.0",
+  "name": "terminal-portfolio",
+  "version": "2.0.0",
+  "description": "An interactive terminal-styled portfolio website with sound effects and animations",
+  "author": {
+    "name": "Fi Rasel",
+    "email": "md.firasel@gmail.com",
+    "url": "https://terminal.firasel.com"
+  },
+  "license": "MIT",
   "private": true,
   "type": "module",
+  "homepage": "https://terminal.firasel.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firasel/Terminal-Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/firasel/Terminal-Portfolio/issues"
+  },
+  "keywords": [
+    "portfolio",
+    "terminal",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "interactive",
+    "developer-portfolio"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +35,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.4",
     "howler": "^2.2.4",
     "next": "^16.1.4",
     "react": "^19.0.0",
@@ -25,5 +51,9 @@
     "eslint-config-next": "^16.1.4",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
