@@ -6,7 +6,7 @@ export function ErrorTemplate(cmd: string): HTMLDivElement {
 
   parentDiv.innerHTML = `
     <span class="font-semibold">${cmd}</span>: command not found
-    <p class="text-white/40 text-xs mt-1">Type "<span class="text-secondary-glow">help</span>" for available commands</p>
+    <p class="text-white/40 text-xs mt-1">Type "<span class="text-secondary-glow">help</span>" to see all available commands</p>
   `;
   return parentDiv;
 }

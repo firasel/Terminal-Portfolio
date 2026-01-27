@@ -12,8 +12,9 @@ export function ProjectsTemplate(): HTMLDivElement {
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white/60 border border-white/10">Next.js</span>
         </div>
         <h3 class="text-white font-bold text-base mb-1 group-hover:text-primary-glow transition-colors">Daily Blogs</h3>
-        <p class="text-white/50 text-xs">Public blog web application with user auth</p>
+        <p class="text-white/50 text-xs">Blog platform with user authentication</p>
       </a>
+
       <a href="https://cedex.vercel.app/" target="_blank" rel="noreferrer"
          class="group p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 block">
         <div class="flex items-center gap-2 mb-2">
@@ -21,8 +22,9 @@ export function ProjectsTemplate(): HTMLDivElement {
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white/60 border border-white/10">Next.js</span>
         </div>
         <h3 class="text-white font-bold text-base mb-1 group-hover:text-primary-glow transition-colors">Cedex</h3>
-        <p class="text-white/50 text-xs">Animated portfolio with smooth animations</p>
+        <p class="text-white/50 text-xs">Portfolio website with smooth animations</p>
       </a>
+
       <a href="https://mobile-galleries.web.app/" target="_blank" rel="noreferrer"
          class="group p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 block">
         <div class="flex items-center gap-2 mb-2">
@@ -30,8 +32,9 @@ export function ProjectsTemplate(): HTMLDivElement {
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white/60 border border-white/10">Next.js</span>
         </div>
         <h3 class="text-white font-bold text-base mb-1 group-hover:text-primary-glow transition-colors">Mobile Gallery</h3>
-        <p class="text-white/50 text-xs">Mobile repair landing page</p>
+        <p class="text-white/50 text-xs">Mobile repair service landing page</p>
       </a>
+
       <a href="https://bdphotowala.web.app/" target="_blank" rel="noreferrer"
          class="group p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 block">
         <div class="flex items-center gap-2 mb-2">
@@ -39,11 +42,11 @@ export function ProjectsTemplate(): HTMLDivElement {
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white/60 border border-white/10">React</span>
         </div>
         <h3 class="text-white font-bold text-base mb-1 group-hover:text-primary-glow transition-colors">BD PhotoWala</h3>
-        <p class="text-white/50 text-xs">Photography service web application</p>
+        <p class="text-white/50 text-xs">Photography service booking platform</p>
       </a>
     </div>
     <p class="text-white/40 text-xs mt-4">
-      Type "<span class="text-secondary-glow">pr [1-4]</span>" for project details
+      Type "<span class="text-secondary-glow">pr [1-4]</span>" for detailed information
     </p>
   `;
   return parentDiv;

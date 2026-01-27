@@ -14,7 +14,7 @@ export const QUICK_COMMANDS = ["help", "projects", "about", "social"] as const;
 export const SOCIAL_LINKS = {
   github: "https://github.com/firasel",
   linkedin: "https://www.linkedin.com/in/firasel",
-  facebook: "https://www.facebook.com/fi.mdrasel",
+  leetcode: "https://leetcode.com/u/firasel/",
 } as const;
 
 export const SOUNDS = {

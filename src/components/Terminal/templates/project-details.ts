@@ -2,7 +2,7 @@ export const allProjectDetails = [
   {
     title: "Daily Blogs",
     description:
-      "A public blog web application. After login, users can post blogs from their accounts, delete them, and save drafts.",
+      "A public blog platform where users can create an account, publish blog posts, save drafts, and manage their content with full CRUD functionality.",
     technology: [
       "NextJS",
       "Axios",
@@ -18,7 +18,7 @@ export const allProjectDetails = [
   {
     title: "Cedex",
     description:
-      "A static personal portfolio site. Multipage supported and 100% responsive with beautiful design and animations.",
+      "A modern personal portfolio website with multi-page support and smooth animations. Fully responsive design that looks great on all devices.",
     technology: [
       "NextJS",
       "React Hook Form",
@@ -31,7 +31,8 @@ export const allProjectDetails = [
   },
   {
     title: "Mobile Gallery",
-    description: "A simple mobile repair landing page with clean design.",
+    description:
+      "A clean and professional landing page for a mobile repair service business.",
     technology: ["NextJS", "TailwindCSS", "Framer Motion", "React Icons"],
     liveLink: "https://mobile-galleries.web.app/",
     github: "https://github.com/firasel/Mobile-Gallery",
@@ -39,7 +40,7 @@ export const allProjectDetails = [
   {
     title: "BD PhotoWala",
     description:
-      "Photography service web application. Users can order services and view order history.",
+      "A photography service booking platform where users can browse services, place orders, and track their order history.",
     technology: [
       "ReactJS",
       "NodeJS",
@@ -66,10 +67,20 @@ export function ProjectDetailsTemplate(index: number): HTMLDivElement {
 {
   <span class="text-json-key">"name"</span>: <span class="text-json-string">"${project.title}"</span>,
   <span class="text-json-key">"description"</span>: <span class="text-json-string">"${project.description}"</span>,
-  <span class="text-json-key">"tech"</span>: [${project.technology.map((t) => `<span class="text-json-string">"${t}"</span>`).join(", ")}],
+  <span class="text-json-key">"tech"</span>: [${project.technology
+    .map((t) => `<span class="text-json-string">"${t}"</span>`)
+    .join(", ")}],
   <span class="text-json-key">"links"</span>: {
-    <span class="text-json-key">"live"</span>: <a href="${project.liveLink}" target="_blank" rel="noreferrer" class="text-primary-glow hover:underline">"${project.liveLink}"</a>,
-    <span class="text-json-key">"github"</span>: <a href="${project.github}" target="_blank" rel="noreferrer" class="text-primary-glow hover:underline">"${project.github}"</a>
+    <span class="text-json-key">"live"</span>: <a href="${
+      project.liveLink
+    }" target="_blank" rel="noreferrer" class="text-primary-glow hover:underline">"${
+      project.liveLink
+    }"</a>,
+    <span class="text-json-key">"github"</span>: <a href="${
+      project.github
+    }" target="_blank" rel="noreferrer" class="text-primary-glow hover:underline">"${
+      project.github
+    }"</a>
   }
 }</pre>
   `;

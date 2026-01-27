@@ -7,16 +7,16 @@ export function SkillsTemplate(): HTMLDivElement {
   parentDiv.innerHTML = `
     <pre class="whitespace-pre-wrap text-sm leading-relaxed"><span class="text-white/30">// Technical Skills</span>
 {
-  <span class="text-json-key">"languages"</span>: [<span class="text-json-string">"C"</span>, <span class="text-json-string">"C++"</span>, <span class="text-json-string">"JavaScript"</span>, <span class="text-json-string">"TypeScript"</span>],
+  <span class="text-json-key">"languages"</span>: [<span class="text-json-string">"TypeScript"</span>, <span class="text-json-string">"JavaScript"</span>, <span class="text-json-string">"HTML/CSS"</span>],
   <span class="text-json-key">"frontend"</span>: [
-    <span class="text-json-string">"React"</span>, <span class="text-json-string">"Next.js"</span>, <span class="text-json-string">"Redux"</span>,
-    <span class="text-json-string">"Recoil"</span>, <span class="text-json-string">"TailwindCSS"</span>, <span class="text-json-string">"Bootstrap"</span>
+    <span class="text-json-string">"React"</span>, <span class="text-json-string">"Next.js"</span>, <span class="text-json-string">"SvelteKit"</span>,
+    <span class="text-json-string">"TailwindCSS"</span>, <span class="text-json-string">"Framer Motion"</span>
   ],
-  <span class="text-json-key">"backend"</span>: [<span class="text-json-string">"Node.js"</span>, <span class="text-json-string">"Express.js"</span>],
-  <span class="text-json-key">"database"</span>: [<span class="text-json-string">"MongoDB"</span>, <span class="text-json-string">"Firestore"</span>],
+  <span class="text-json-key">"backend"</span>: [<span class="text-json-string">"Node.js"</span>, <span class="text-json-string">"Express"</span>],
+  <span class="text-json-key">"cms"</span>: [<span class="text-json-string">"PayloadCMS"</span>, <span class="text-json-string">"Sanity"</span>],
+  <span class="text-json-key">"database"</span>: [<span class="text-json-string">"MongoDB"</span>],
   <span class="text-json-key">"tools"</span>: [
-    <span class="text-json-string">"VSCode"</span>, <span class="text-json-string">"GitHub"</span>, <span class="text-json-string">"Firebase"</span>,
-    <span class="text-json-string">"Vercel"</span>, <span class="text-json-string">"Netlify"</span>, <span class="text-json-string">"Heroku"</span>
+    <span class="text-json-string">"Git"</span>, <span class="text-json-string">"GitHub"</span>, <span class="text-json-string">"Vercel"</span>, <span class="text-json-string">"Figma"</span>
   ]
 }</pre>
   `;
