@@ -1,26 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.cdnfonts.com/css/sf-mono");
+@import "tailwindcss";
 
-@layer utilities {
-  .scrollbar::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
+@theme {
+  /* Background Colors */
+  --color-bg-body: #050508;
+  --color-glass-surface: rgba(30, 30, 40, 0.5);
+  --color-glass-border: rgba(255, 255, 255, 0.12);
+
+  /* Accent Colors */
+  --color-primary-glow: #5e5ce6;
+  --color-secondary-glow: #32d74b;
+  --color-accent-blue: #5ac8fa;
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.4);
+
+  /* Blob Background Colors */
+  --color-blob-purple: #2e1a47;
+  --color-blob-gray: #1c1c24;
+  --color-blob-blue: #1a2340;
+
+  /* Window Control Colors */
+  --color-control-red: #ff5f56;
+  --color-control-yellow: #ffbd2e;
+  --color-control-green: #27c93f;
+
+  /* JSON Syntax Highlighting */
+  --color-json-key: #9cdcfe;
+  --color-json-string: #ce9178;
+  --color-json-number: #b5cea8;
+  --color-json-boolean: #569cd6;
+
+  /* Font Family */
+  --font-mono: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+
+  /* Custom Animations */
+  --animate-float: float 20s ease-in-out infinite;
+}
+
+/* Keyframes for animations */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-  .scrollbar::-webkit-scrollbar-track {
-    border-radius: 100vh;
-    background: #272828;
+  50% {
+    transform: translate(30px, -50px) scale(1.2);
   }
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: #3a3b3c;
-    border-radius: 100vh;
-    border: 3px solid #272828;
-  }
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #505050;
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
 
-.soundControl:hover .rangeBlock {
-  display: block !important;
+/* Base body styles */
+body {
+  font-family: var(--font-mono);
+  background-color: var(--color-bg-body);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling - browser specific, cannot be done with Tailwind */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
