@@ -15,6 +15,7 @@ import { SOUNDS } from "../constants";
 import { CommandTemplate, ErrorTemplate } from "../templates";
 import { useCommandHistory } from "./use-command-history";
 import { useSound } from "./use-sound";
+import { triggerDrop } from "../../text-drop";
 
 export function useTerminal() {
   // DOM refs
@@ -144,9 +145,15 @@ export function useTerminal() {
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       playSound(SOUNDS.keyPress);
-      setInputValue(e.target.value);
+      const newValue = e.target.value;
+
+      if (newValue.length > inputValue.length) {
+        triggerDrop(newValue.slice(-1));
+      }
+
+      setInputValue(newValue);
     },
-    [playSound],
+    [playSound, inputValue],
   );
 
   const focusInput = useCallback(() => {
