@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "../styles/globals.css";
 import { PropsWithChildren } from "react";
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         {process.env.NEXT_PUBLIC_ANALYTICS_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_ANALYTICS_ID} />
         )}
+        <Analytics />
       </body>
     </html>
   );
