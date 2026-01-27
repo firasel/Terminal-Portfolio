@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { ASCII_ART, QUICK_COMMANDS } from "./constants";
-import { useTerminal } from "./hooks";
+import { useTerminal } from "./hooks/use-terminal";
 
 export function Terminal() {
   const {
