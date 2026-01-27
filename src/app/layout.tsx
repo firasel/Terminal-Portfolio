@@ -17,12 +17,19 @@ export const metadata: Metadata = {
     ...siteTitleDescription,
     url: "https://terminal.firasel.com/",
     type: "website",
-    images: ["https://i.ibb.co/2SDhrHX/og.png"],
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Fi Rasel - Terminal Portfolio Preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     ...siteTitleDescription,
-    images: ["https://i.ibb.co/2SDhrHX/og.png"],
+    images: ["/preview.png"],
   },
 };
 
