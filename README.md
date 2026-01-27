@@ -100,7 +100,6 @@ src/
 │   ├── layout.tsx       # Root layout with metadata
 │   └── page.tsx         # Home page
 ├── components/
-│   ├── home/            # Main container
 │   ├── sound-control/   # Volume control widget
 │   ├── terminal/        # Terminal emulator + command system
 │   │   ├── commands.ts  # Command registry
