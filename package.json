@@ -32,7 +32,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.4",
@@ -51,9 +51,5 @@
     "eslint-config-next": "^16.1.4",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
   }
 }

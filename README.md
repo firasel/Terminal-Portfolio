@@ -37,11 +37,6 @@
 
 ## 🎯 Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- npm 9+ or yarn
-
 ### Installation
 
 Clone the repository
